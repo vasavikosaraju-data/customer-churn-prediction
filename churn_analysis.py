@@ -35,3 +35,9 @@ y_pred = model.predict(X_test)
 # Results
 print("Accuracy:", accuracy_score(y_test, y_pred))
 print("\nClassification Report:\n", classification_report(y_test, y_pred))
+# Feature Importance
+print("\nFeature Importance:")
+importances = model.feature_importances_
+
+for feature, importance in zip(X.columns, importances):
+    print(f"{feature}: {importance:.2f}")
